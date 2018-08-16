@@ -23,6 +23,18 @@ def info(request):
     return render_to_response('TINKOFF/info.html', context_dict, context)
 
 @csrf_exempt
+def reglaments(request):
+    context = RequestContext(request)
+    context_dict = {'boldmessage': "I am a bold font from the context"}
+    return render_to_response('TINKOFF/reglaments.html', context_dict, context)
+
+@csrf_exempt
+def help(request):
+    context = RequestContext(request)
+    context_dict = {'boldmessage': "I am a bold font from the context"}
+    return render_to_response('TINKOFF/help.html', context_dict, context)
+
+@csrf_exempt
 def support(request):
     context = RequestContext(request)
     context_dict = {'boldmessage': "I am a bold font from the context"}
