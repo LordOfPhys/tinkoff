@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Genericblue by FCT</title>
+    <link href="{% static 'css/default.css' %}" rel="stylesheet" type = "text/css" />
+</head>
+<body>
+<div id="outer">
+	<div id="header">
+		<h1>Админка v1.0</h1>
+	</div>
+	<div id="menu">
+		<ul>
+			<li class="first"><a href="../index" accesskey="1" title="">Главная</a></li>
+			<li><a href="../info" accesskey="2" title="">Информация</a></li>
+			<li><a href="../signup" accesskey="3" title="">Регистрация</a></li>
+			<li><a href="../login" accesskey="4" title="">Вход</a></li>
+			<li><a href="../support" accesskey="5" title="">Поддержка</a></li>
+		</ul>
+	</div>
+	<div id="content">
+		<div id="tertiaryContent">
+			<h3>Полезная информация</h3>
+			<ul>
+				<li><a href="#">Ссылки</a></li>
+			</ul>
+			<div class="xbg"></div>
+		</div>
+		<div id="primaryContentContainer">
+			<div id="primaryContent">
+				<h2>Добро пожаловать в админку отдела развития</h2>
+				<p>Данный ресурс предназначен для систематизации и упрощения работы отдела развития. Здесь можно быстро создать ряд новых продуктов и найти много полезной информации. Постепенно будет добавлятся новая информация и функционал. По всем вопросам писать на почту a.gerasimenko@tinkoff.ru</p>
+				<h3>Примеры проектов, которые могут быть реализованы в данный момент:</h3>
+				<ul>
+					<li><a href="#">Wylsacom</a></li>
+					<li><a href="#">IamCoach</a></li>
+					<li><a href="#">AcademeG</a></li>
+				</ul>
+				<h3>Будте внимательны</h3>
+				<blockquote>
+						<p>Данный ресур не гарантирует правильности выпуска нового продукта, если не следовать всем правилам и регламентам.</p>
+				</blockquote>
+			</div>
+		</div>
+		<div id="secondaryContent">
+			<h3>Регламенты</h3>
+			<ul>
+				<li><a href="../new_design">Новый дизайн</a></li>
+			</ul>
+			<div class="xbg"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div id="footer">
+		<p>Предложения отправлять на почту a.gerasimenko@tinkoff.ru</p>
+	</div>
+</div>
+</body>
+</html>
