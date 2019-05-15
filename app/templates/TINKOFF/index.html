@@ -1,84 +1,54 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+<html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Genericblue by FCT</title>
+    <title>Проект</title>
     <link href="{% static 'css/default.css' %}" rel="stylesheet" type = "text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
-<div id="outer">
-	<div id="header">
-		<h1>Админка v1.0</h1>
-	</div>
-	<div id="menu">
-		<ul>
-			<li class="first"><a href="../index" accesskey="1" title="">Главная</a></li>
-			<li><a href="../info" accesskey="2" title="">Информация</a></li>
-			<li><a href="../signup" accesskey="3" title="">Регистрация</a></li>
-			<li><a href="../login" accesskey="4" title="">Вход</a></li>
-			<li><a href="../support" accesskey="5" title="">Поддержка</a></li>
-		</ul>
-	</div>
-	<div id="content">
-		<div id="tertiaryContent">
-			<h3>Полезная информация</h3>
-			<ul>
-				<li><a href="../help">Мне повезет</a></li>
-			</ul>
-			<div class="xbg"></div>
-		</div>
-		<div id="primaryContentContainer">
-			<div id="primaryContent">
-				<h2>Добро пожаловать в админку отдела развития</h2>
-				<p>Данный ресурс предназначен для систематизации и упрощения работы отдела развития. Здесь можно быстро создать ряд новых продуктов и найти много полезной информации. Постепенно будет добавлятся новая информация и функционал. По всем вопросам писать на почту a.gerasimenko@tinkoff.ru</p>
-				<h3>Примеры проектов, которые могут быть реализованы в данный момент:</h3>
-				<ul>
-					<li><a href="#">Wylsacom</a></li>
-					<li><a href="#">IamCoach</a></li>
-					<li><a href="#">AcademeG</a></li>
-				</ul>
-				<h3>Будте внимательны</h3>
-				<blockquote>
-						<p>Данный ресур не гарантирует правильности выпуска нового продукта, если не следовать всем правилам и регламентам.</p>
-				</blockquote>
-				<h3>Заведение нового дизайна на старом продукте</h3>
-				<form name = "project" method="post">
-                <p><h2><u>Название проекта:</u></h2>
-                    <input name = "projectName" type="text" size="25">
-                <p><h2><u>Card Design:</u></h2>
-                    <input name = "CD" type="text" size="5">
-                <p><h2><u>CAST:</u></h2>
-                    <input name = "CAST" type="text" size="25">
-                <p><h2><u>tidы</u></h2>
-                    <input name = "tid" type="text" size="30">
-                <p><h2><u>МПС</u></h2>
-                    <input name = "MPS" type="radio" name="MPS" value="Visa">Visa<br>
-                    <input name = "MPS" type="radio" name="MPS" value="MasterCard">MasterCard<br>
-                    <input name = "MPS" type="radio" name="MPS" value="MIR">МИР<br>
-                <p><h2><u>Кредитная или дебетовая?</u></h2>
-                    <input name = "TYPE" type="radio" name="cards" value="Credit">Кредитная<br>
-                    <input name = "TYPE" type="radio" name="cards" value="Debit">Дебетовая<br>
-                    <input name = "TYPE" type="radio" name="cards" value="DebitAndCredit">Кредитная и дебетовая<br>
-                <p><h2><u>Изображение карты</u></h2>
-                    <input name = "image" type = "file" value = "Изображение карты">
-                <p>
-                <br>
-                    <input type="submit", value="Поставить задачи">
-                </form>
-			</div>
-		</div>
-		<div id="secondaryContent">
-			<h3>Регламенты</h3>
-			<ul>
-				<li><a href="../reglaments">Новый дизайн</a></li>
-			</ul>
-			<div class="xbg"></div>
-		</div>
-		<div class="clear"></div>
-	</div>
-	<div id="footer">
-		<p>Предложения отправлять на почту a.gerasimenko@tinkoff.ru</p>
-	</div>
-</div>
+    <div class = 'content'>
+        <div class = 'header'>
+            <div class = 'logo_and_enter'>
+                <div class = 'logo'>
+                    <img src = '../../static/images/logo.jpg'>
+                </div>
+                <div class = 'enter'>
+                    <a href = '../login'><div>Вход</div></a>
+                    <a href = '../logout'><div>Выход</div></a>
+                </div>
+            </div>
+            <div class = 'menu'>
+                <p id = 'button_doc'>Документы</p>
+                <p>Календарь</p>
+                <p>Анатилика</p>
+            </div>
+        </div>
+        <div class = 'main'>
+            <div class = 'documents' id = 'documents'>
+                <div class = 'first_line'>
+                    <div>one</div>
+                    <div>two</div>
+                    <div>thre</div>
+                </div>
+                <div class = 'second_line'>
+                    <div>one</div>
+                    <div>two</div>
+                    <div>thre</div>
+                </div>
+                <div class = 'third_line'>
+                    <div>one</div>
+                </div>
+            </div>
+        </div>
+        <div class = 'footer'>
+            <div class = 'rights'>
+                Design by <a href = '#'>TheFather</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
