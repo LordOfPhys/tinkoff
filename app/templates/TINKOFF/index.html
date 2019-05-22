@@ -8,6 +8,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link href="{% static 'css/datepicker.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/datepicker.min.js' %}"></script>
 </head>
 <body>
     <div class = 'content'>
@@ -22,31 +24,43 @@
                 </div>
             </div>
             <div class = 'menu'>
-                <p id = 'button_doc'>Документы</p>
-                <p>Календарь</p>
-                <p>Анатилика</p>
+                <div id = 'button_doc'>Документы</div>
+                <div id = 'button_cal'>Календарь</div>
+                <div>Анатилика</div>
             </div>
         </div>
         <div class = 'main'>
             <div class = 'documents' id = 'documents'>
                 <div class = 'first_line'>
-                    <div>one</div>
-                    <div>two</div>
-                    <div>thre</div>
+                    <div>Все документы</div>
+                    <div>Мои документы</div>
+                    <div>Архив</div>
                 </div>
                 <div class = 'second_line'>
-                    <div>one</div>
-                    <div>two</div>
-                    <div>thre</div>
+                    <div>Юридическое лицо</div>
+                    <div>Новые</div>
+                    <div>Недавно добавленные</div>
                 </div>
                 <div class = 'third_line'>
-                    <div>one</div>
+                    <div>Физическое лицо</div>
+                    <div>На согласовании</div>
+                    <div>Все документы в архиве</div>
+                </div>
+                <div class = 'forth_line'>
+                    <div>На подпись</div>
                 </div>
             </div>
-        </div>
-        <div class = 'footer'>
-            <div class = 'rights'>
-                Design by <a href = '#'>TheFather</a>
+            <div class = 'calendar' id = 'calendar'>
+                <form method="POST">
+                    <input type="text" id="date" name="date" data-range="true" data-multiple-dates-separator=" - " class="datepicker-here"/ value = 'Дата'>
+                    <input type="text" id="task" name="task" value = 'Описание'>
+                    <input type="submit" value="Поставить задачу">
+                </form>
+                <p>Текущая задача:</p>
+                <div>
+                    {{ time }}
+                    {{ task }}
+                </div>
             </div>
         </div>
     </div>

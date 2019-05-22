@@ -9,14 +9,22 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
-from TINKOFF.models import UserProfile
+from TINKOFF.models import UserProfile, UserTask
 from django.core.mail import send_mail
 
 @csrf_exempt
 def index(request):
     context = RequestContext(request)
     context_dict = {'boldmessage': "I am a bold font from the context"}
-    print(request.user)
+    if request.user is not None:
+        context_dict = {'task': UserTask.objects.get(user = request.user).take_task(), 'time': UserTask.objects.get(user = request.user).take_date()}
+    if request.method == 'POST':
+        user = request.user
+        if user is not None:
+            UserTask.objects.get(user = request.user).make_task(request.POST['task'])
+            UserTask.objects.get(user = request.user).make_date(request.POST['date'])
+        else:
+            return redirect('../login')
     return render_to_response('TINKOFF/index.html', context_dict, context) #need to redirect to new page
 
 @csrf_exempt
