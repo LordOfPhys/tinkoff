@@ -16,11 +16,11 @@ from django.core.mail import send_mail
 def index(request):
     context = RequestContext(request)
     context_dict = {'boldmessage': "I am a bold font from the context"}
-    if request.user is not None:
+    if request.user is not None and request.user.is_active:
         context_dict = {'task': UserTask.objects.get(user = request.user).take_task(), 'time': UserTask.objects.get(user = request.user).take_date()}
     if request.method == 'POST':
         user = request.user
-        if user is not None:
+        if user is not None and request.user.is_active:
             UserTask.objects.get(user = request.user).make_task(request.POST['task'])
             UserTask.objects.get(user = request.user).make_date(request.POST['date'])
         else:

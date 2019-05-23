@@ -16,7 +16,7 @@
         <div class = 'header'>
             <div class = 'logo_and_enter'>
                 <div class = 'logo'>
-                    <img src = '../../static/images/logo.jpg'>
+                    <img src = '../../static/images/logo.png'>
                 </div>
                 <div class = 'enter'>
                     <a href = '../login'><div>Вход</div></a>
@@ -51,16 +51,18 @@
                 </div>
             </div>
             <div class = 'calendar' id = 'calendar'>
-                <form method="POST">
-                    <input type="text" id="date" name="date" data-range="true" data-multiple-dates-separator=" - " class="datepicker-here"/ value = 'Дата'>
-                    <input type="text" id="task" name="task" value = 'Описание'>
-                    <input type="submit" value="Поставить задачу">
-                </form>
-                <p>Текущая задача:</p>
-                <div>
+                <div class = 'new_task'>
+                    <form method="POST">
+                        <input type="text" id="date" name="date" data-range="true" data-multiple-dates-separator=" - " class="datepicker-here"/ value = 'Дата'>
+                        <textarea id="task" name="task" value = 'Описание'></textarea>
+                        <input type="submit" value="Поставить задачу">
+                    </form>
+                </div>
+                <div class = 'now_task'>
+                    Текущая задача:
                     {{ time }}
                     {{ task }}
-                </div>
+                </div>    
             </div>
         </div>
     </div>
